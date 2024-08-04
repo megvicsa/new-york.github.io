@@ -244,8 +244,8 @@
                         { type: 'NACS ', value: '2' }
                     ],
                 chargeTime: [
-                        { type: 'J1772', value: '' },
-                        { type: 'NACS ', value: '' }
+                        { type: 'J1772', value: 'unknown' },
+                        { type: 'NACS ', value: 'unknown' }
                     ],
                 socketAvalability: [
                         { type: 'J1772', value: '1 available' },
@@ -287,8 +287,8 @@
                         { type: 'Wall', value: '1' }
                     ],
                 chargeTime: [
-                        { type: 'J1772', value: '' },
-                        { type: 'Wall', value: '' }
+                        { type: 'J1772', value: 'unknown' },
+                        { type: 'Wall', value: 'unknown' }
                     ],
                 socketAvalability: [
                         { type: 'J1772', value: '3 available' },
@@ -931,7 +931,7 @@
                 logData(`Map Clicked`, null, null, clickCoords, mapNum);
                 console.log(`Map clicked at: ${clickCoords}`);
 
-                const bufferRadius = 0.8; // Buffer radius in kilometers
+                const bufferRadius = 1.4; // Buffer radius in kilometers
 
                 if(!checkBufferZone(clickCoords, chargingStations[0].coordinates, bufferRadius) && !checkBufferZone(clickCoords, chargingStations[1].coordinates, bufferRadius)) {
                     removeRoutes();
