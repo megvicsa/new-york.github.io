@@ -244,8 +244,8 @@
                         { type: 'NACS ', value: '2' }
                     ],
                 chargeTime: [
-                        { type: 'J1772', value: 'unknown' },
-                        { type: 'NACS ', value: 'unknown' }
+                        { type: 'J1772', value: '272' },
+                        { type: 'NACS ', value: '272' }
                     ],
                 socketAvalability: [
                         { type: 'J1772', value: '1' },
@@ -255,13 +255,13 @@
                 energySource: '49% Grid, 51% Renewable',
 
                 chargingFee: '$0.00',
-                chargingFeeRate: 'per kWh',
+                chargingFeeRate: 'per any amount of power',
                 parkingFee: '$19',
-                parkingFeeRate: 'for up to 12 hours of parking',
+                parkingFeeRate: 'for every 12 hours',
 
-                coffee: 'Yes <br><br> There is a coffee shop in walking distance 0.1 mile away.',
-                grocery: 'Yes <br><br> There is a grocery store in walking distance 0.1 mile away.',
-                sportsClothes: 'Yes <br><br> There is a sports or clothing store in walking distance 1 mile away.',
+                coffee: 'Yes. <br><br> There is a coffee shop in walking distance 0.1 mile away.',
+                grocery: 'Yes. <br><br> There is a grocery store in walking distance 0.1 mile away.',
+                sportsClothes: 'Yes. <br><br> There is a sports or clothing store in walking distance 1 mile away.',
                 
                 rating: '',
                 ratingNum: '0'
@@ -287,8 +287,8 @@
                         { type: 'Wall', value: '1' }
                     ],
                 chargeTime: [
-                        { type: 'J1772', value: 'unknown' },
-                        { type: 'Wall', value: 'unknown' }
+                        { type: 'J1772', value: '272' },
+                        { type: 'Wall', value: '272' }
                     ],
                 socketAvalability: [
                         { type: 'J1772', value: '3' },
@@ -298,14 +298,14 @@
                 energySource: '33% Grid, 67% Renewable',
 
                 chargingFee: '$3.00',
-                chargingFeeRate: 'per hours charging',
+                chargingFeeRate: 'per hours',
 
                 parkingFee: '$0.00',
                 parkingFeeRate: 'for any amount of time',
 
-                coffee: 'Yes <br><br> There is a coffee shop in walking distance 1.7 miles away.',
-                grocery: 'Yes <br><br> There is a grocery store in walking distance 1.7 miles away.',
-                sportsClothes: 'No <br><br> There is no sports or clothing store in walking distance.',
+                coffee: 'Yes. <br><br> There is a coffee shop in walking distance 1.7 miles away.',
+                grocery: 'Yes. <br><br> There is a grocery store in walking distance 1.7 miles away.',
+                sportsClothes: 'No. <br><br> There is no sports or clothing store in walking distance.',
                 
                 rating: '',  
                 ratingNum: '0'
@@ -526,7 +526,7 @@
             return `
                     <h3 style="font-size: 20px; margin-top: 0; margin-bottom: 10px;">${station.name}</h3>
                     <img src="${decodeURIComponent(encodedImageUrl)}" alt="${station.name}" style="width:100%;max-width:300px;">
-                    <button class="popup-button" onclick="showMoreInfo('${station.name}', 'location', '<b>Location:</b> <br> ${station.location}', '${boxId}')">Location</button>
+                    <button class="popup-button" onclick="showMoreInfo('${station.name}', 'location', '<b>Location:</b> <br> ${station.location}.', '${boxId}')">Location</button>
                     <button class="popup-button" onclick="showMoreInfo('${station.name}', 'originDistance', '<b>Distance from my location:</b> ${station.originDistance} miles. <br><br>The distance from your location to ${station.name.toLowerCase()} is ${station.originDistance} miles.', '${boxId}')">Distance from my Location</button>
                     <button class="popup-button" onclick="showMoreInfo('${station.name}', 'originTime', '<b>Travel time from my location:</b> ${station.originTime} minutes. <br><br>The estimated travel time from your location to ${station.name.toLowerCase()} is ${station.originTime} minutes.', '${boxId}')">Travel Time from my Location</button>
                     <button class="popup-button" onclick="showMoreInfo('${station.name}', 'destDistance', '<b>Distance to destination:</b> ${station.destDistance} miles. <br><br>The distance from ${station.name.toLowerCase()} to the destination is ${station.destDistance} miles.', '${boxId}')">Distance to Destination</button>
@@ -537,7 +537,7 @@
                     <button class="popup-button" onclick="showMoreInfo('${station.name}', 'socketAvalability', '<b>Socket availability:</b><br>${socketAvailabilityDetails}', '${boxId}')">Socket Availability</button>
                     <button class="popup-button" onclick="showMoreInfo('${station.name}', 'energySource', '<b>Energy source at station:</b><br>${station.energySource}.', '${boxId}')">Energy Source at Station</button>
                     <button class="popup-button" onclick="showMoreInfo('${station.name}', 'fees', '<b>Cost to charge:</b> ${station.chargingFee}. <br><br> The price ${station.chargingFeeRate} is ${station.chargingFee}.', '${boxId}')">Cost to Charge</button>
-                    <button class="popup-button" onclick="showMoreInfo('${station.name}', 'parking', '<b>Cost to park at station:</b> ${station.parkingFee} parking. <br><br> The price of parking your car at the charging station ${station.parkingFeeRate} is ${station.parkingFee}.', '${boxId}')">Cost to Park at Station</button>
+                    <button class="popup-button" onclick="showMoreInfo('${station.name}', 'parking', '<b>Cost to park at station:</b> ${station.parkingFee}. <br><br> The price of parking your car at the charging station ${station.parkingFeeRate} is ${station.parkingFee}.', '${boxId}')">Cost to Park at Station</button>
                     <button class="popup-button" onclick="showMoreInfo('${station.name}', 'coffee', '<b>Coffe shop:</b> ${station.coffee}', '${boxId}')">Coffee Shop</button>
                     <button class="popup-button" onclick="showMoreInfo('${station.name}', 'grocery', '<b>Grocery store:</b> ${station.grocery}', '${boxId}')">Grocery Store</button>
                     <button class="popup-button" onclick="showMoreInfo('${station.name}', 'sportsClothes', '<b>Sports/Clothing store:</b> ${station.sportsClothes}', '${boxId}')">Sport/Clothing Store</button>
